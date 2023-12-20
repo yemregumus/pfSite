@@ -9,7 +9,7 @@ export default function About() {
   useTypingAnimation(words, speed, delay);
   return (
     <>
-      <div className={styles.words}></div>
+      <div className="word"></div>
     </>
   );
 }
