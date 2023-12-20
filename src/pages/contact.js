@@ -48,7 +48,7 @@ export default function Contact() {
 
   return (
     <>
-      <h1>Contact Page</h1>
+      <h1>Contact Me</h1>
       {submitted ? (
         <p>Thank you for your message! I&apos;ll get back to you as soon as possible.</p>
       ) : (
