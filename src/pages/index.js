@@ -24,13 +24,7 @@ export default function Home() {
   return (
     <Row>
       <Col md={2}>
-        <Image
-          src={Headshot} // Path to your image in the public folder
-          alt="My Image"
-          width={220} // Set the desired width
-          height={250} // Set the desired height
-          priority
-        />
+        <Image alt="headshot" src={Headshot} width={220} height={250} priority />
       </Col>
       <Col md={10}>
         <div>
