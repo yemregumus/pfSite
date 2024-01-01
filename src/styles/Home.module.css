@@ -1,0 +1,14 @@
+/* Home.module.css */
+
+/* Existing styles... */
+
+.about-section {
+  transition: max-height 0.5s ease-in-out;
+  max-height: 0;
+  overflow: hidden;
+}
+
+.about-section.active {
+  max-height: 1000px; /* Adjust the value as needed based on your content height */
+  overflow: visible;
+}

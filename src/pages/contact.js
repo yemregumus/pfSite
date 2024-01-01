@@ -1,6 +1,7 @@
 // Contact.js
 import React, { useState } from "react";
 import { useRouter } from "next/router";
+import { Container, Form, Button, Alert } from "react-bootstrap";
 
 export default function Contact() {
   const [name, setName] = useState("");
@@ -47,30 +48,35 @@ export default function Contact() {
   };
 
   return (
-    <>
-      <h1>Contact Me</h1>
+    <Container>
+      <h1 className="mt-5">Contact Me</h1>
       {submitted ? (
-        <p>Thank you for your message! I&apos;ll get back to you as soon as possible.</p>
+        <Alert variant="success" className="mt-3">
+          Thank you for your message! I&apos;ll get back to you as soon as possible. <br />
+          Additionally you can try to contact me through social media too! :)
+        </Alert>
       ) : (
-        <form onSubmit={handleSubmit}>
-          <label>
-            Name:
-            <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
-          </label>
+        <Form onSubmit={handleSubmit} className="mt-3">
+          <Form.Group controlId="formName">
+            <Form.Label>Name:</Form.Label>
+            <Form.Control type="text" value={name} onChange={(e) => setName(e.target.value)} />
+          </Form.Group>
+
+          <Form.Group controlId="formEmail">
+            <Form.Label>Email:</Form.Label>
+            <Form.Control type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+          </Form.Group>
+
+          <Form.Group controlId="formMessage">
+            <Form.Label>Message:</Form.Label>
+            <Form.Control as="textarea" rows={4} value={message} onChange={(e) => setMessage(e.target.value)} />
+          </Form.Group>
           <br />
-          <label>
-            Email:
-            <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
-          </label>
-          <br />
-          <label>
-            Message:
-            <textarea value={message} onChange={(e) => setMessage(e.target.value)} />
-          </label>
-          <br />
-          <button type="submit">Submit</button>
-        </form>
+          <Button variant="primary" type="submit">
+            Submit
+          </Button>
+        </Form>
       )}
-    </>
+    </Container>
   );
 }

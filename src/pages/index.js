@@ -1,25 +1,29 @@
-import { useEffect } from "react";
-import $ from "jquery";
-import Head from "next/head";
+import { useEffect, useState } from "react";
+import { TypeAnimation } from "react-type-animation";
+import { Card, Row, Col } from "react-bootstrap";
 import Image from "next/image";
-import { Inter } from "next/font/google";
-
 import Headshot from "../img/headshot.jpg";
-import useTypingAnimation from "../../hooks/useTypingAnimation";
 
 export default function Home() {
-  const words1 = ["<h1>Hi I'm Yunus</h1> <p>a student specializing in Computer Programming and Analysis at Seneca College.<br/> Currently on the path to becoming a full-stack software developer, I anticipate graduating in October 2024.<br/> As I refine my skills, I look forward to presenting and showcasing my work here.</p>"];
-  const speed = 25;
-  const delay = 2000;
+  const [animationInitiated, setAnimationInitiated] = useState(false);
+  const [textIndex, setTextIndex] = useState(0);
 
-  useTypingAnimation(words1, speed, delay);
+  const textParts = [{ text: "Hi I'm Yunus", tag: "h1", style: { fontSize: "2em" } }, { text: "a student specializing in Computer Programming and Analysis at Seneca College." }, { text: "Currently on the path to becoming a full-stack software developer, I anticipate graduating in October 2024." }, { text: "As I refine my skills, I look forward to presenting and showcasing my work here.", tag: "p" }];
+
+  useEffect(() => {
+    if (!animationInitiated) {
+      // Start animation for the next text part after a delay
+      const timeout = setTimeout(() => {
+        setTextIndex((prevIndex) => prevIndex + 1);
+      }, 2400); // Adjust the delay as needed
+
+      return () => clearTimeout(timeout);
+    }
+  }, [animationInitiated, textIndex]);
 
   return (
-    <>
-      <Head>
-        <title>Yunus Gumus</title>
-      </Head>
-      <div className="container">
+    <Row>
+      <Col md={2}>
         <Image
           src={Headshot} // Path to your image in the public folder
           alt="My Image"
@@ -27,9 +31,27 @@ export default function Home() {
           height={250} // Set the desired height
           priority
         />
-
-        <div className="word"></div>
-      </div>
-    </>
+      </Col>
+      <Col md={10}>
+        <div>
+          {textParts.slice(0, textIndex + 1).map((part, index) => (
+            <TypeAnimation
+              key={index}
+              sequence={[part.text]}
+              speed={{ type: "keyStrokeDelayInMs", value: 20 }}
+              cursor={false}
+              wrapper={part.tag || "div"}
+              style={part.style || { fontSize: "1em" }}
+              onComplete={() => {
+                if (index === textParts.length + 1) {
+                  // Set initiated to true when the last part completes
+                  setAnimationInitiated(true);
+                }
+              }}
+            />
+          ))}
+        </div>
+      </Col>
+    </Row>
   );
 }
