@@ -18,7 +18,7 @@ export default function MainNav() {
   const router = useRouter();
   return (
     <>
-      <Navbar fixed="top" expand="lg" className="fixed-top bg-dark navbar-dark" expanded={expanded}>
+      <Navbar fixed="top" expand="lg" className="fixed-top bg-dark navbar-dark custom-navbar" expanded={expanded}>
         <Container>
           <Navbar.Brand className="ml-auto">
             <Link href="/">

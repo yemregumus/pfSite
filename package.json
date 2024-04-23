@@ -16,21 +16,27 @@
     "@mui/material": "^5.15.2",
     "@mui/styled-engine-sc": "^6.0.0-alpha.10",
     "bootstrap": "^5.3.2",
+    "framer-motion": "^11.1.7",
     "jquery": "^3.7.1",
     "next": "14.0.1",
     "react": "^18",
     "react-bootstrap": "^2.9.1",
     "react-dom": "^18",
+    "react-scroll": "^1.9.0",
+    "react-scrollspy": "^3.4.3",
     "react-type-animation": "^3.2.0",
     "styled-components": "^6.1.6",
     "swr": "^2.2.4"
   },
   "devDependencies": {
+    "@types/node": "^20.12.7",
+    "@types/react": "^18.2.79",
     "autoprefixer": "^10.4.16",
     "eslint": "^8",
     "eslint-config-next": "14.0.1",
     "file-loader": "^6.2.0",
     "postcss": "^8.4.32",
-    "tailwindcss": "^3.4.0"
+    "tailwindcss": "^3.4.0",
+    "typescript": "^5.4.5"
   }
 }
