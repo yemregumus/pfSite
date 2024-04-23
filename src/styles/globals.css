@@ -79,6 +79,11 @@ body {
 .white-rabbit-animation {
   animation: slideRight 8s linear infinite;
 }
+.white-rabbit-animation img {
+  border-radius: 0; /* Remove border-radius */
+  box-shadow: none; /* Remove box-shadow */
+}
+
 @keyframes slideRight {
   20% {
     transform: translateX(0);
