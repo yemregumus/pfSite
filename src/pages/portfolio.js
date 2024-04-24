@@ -1,61 +1,24 @@
 import React, { useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
+import Rabbit from "../img/white-rabbit.gif";
+import WhiteRabbit from "./components/WhiteRabbit";
 
-const Testimonials = () => {
-  const testimonials = [
-    {
-      id: 1,
-      name: "John Doe",
-      quote: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut aliquam felis velit, a placerat ligula lacinia et.",
-    },
-    {
-      id: 2,
-      name: "Jane Smith",
-      quote: "Vestibulum nec metus quis justo vestibulum vestibulum. Morbi varius nunc sit amet dui faucibus, ut laoreet elit semper.",
-    },
-    {
-      id: 3,
-      name: "David Johnson",
-      quote: "Aenean sagittis ligula ac velit pellentesque, at pretium elit tincidunt. Nunc eleifend arcu at sapien ullamcorper iaculis.",
-    },
-  ];
-
-  const controls = useAnimation();
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const testimonialsSection = document.getElementById("testimonials");
-      const { top } = testimonialsSection.getBoundingClientRect();
-      const isVisible = top < window.innerHeight - 100;
-
-      if (isVisible) {
-        controls.start({ opacity: 1, scale: 1 });
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [controls]);
-
+const Portfolio = () => {
+  const textSequence = ["Neo: Hello?", 2000, "Morpheus: Hello, Neo. Do you know who this is?", 2000, "Neo: Morpheus?", 2000, "Morpheus: Yes. I've been looking for you, Neo.", 2000, "Morpheus: I don't know if you're ready to see what I want to show you, but unfortunately, you and I have run out of time.", 2000, "Morpheus: They're coming for you, Neo, and I don't know what they're going to do.", 2000, "Neo: Who's coming for me?", 2000, "Morpheus: Stand up and see for yourself.", 2000, "Neo: What, right now?", 2000, "Morpheus: Yes, now.", 2000, "The Matrix has you...", 2000, "Follow the white rabbit.", 2000];
   return (
-    <section className="bg-transparent bg-opacity-20 backdrop-filter backdrop-blur-md px-10 py-16 mb-[300px]" id="testimonials">
-      <div className="container mx-auto">
-        <h2 className="text-3xl md:text-5xl font-bold text-white text-center mb-10">Testimonials</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {testimonials.map((testimonial) => (
-            <motion.div key={testimonial.id} className="bg-white bg-opacity-10 p-8 rounded-lg shadow-lg" initial={{ opacity: 0, scale: 0.9 }} animate={controls} transition={{ duration: 0.8 }}>
-              <p className="text-gray-300 mb-4">{testimonial.quote}</p>
-              <p className="text-white font-bold">{testimonial.name}</p>
-            </motion.div>
-          ))}
+    <>
+      <motion.section initial={{ opacity: 0, filter: "blur(20px)" }} animate={{ opacity: 1, filter: "blur(0px)" }} transition={{ duration: 1, delay: 0.5 }} className="bg-transparent bg-opacity-20 backdrop-filter backdrop-blur-lg " id="home">
+        <div className="container mx-auto flex flex-col pb-10 md:pb-40 items-center justify-center h-screen px-6">
+          <motion.h1 initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.5 }} className="text-4xl md:text-4xl lg:text-4xl font-bold text-white mb-6  text-center">
+            Projects Page Coming Soon
+          </motion.h1>
         </div>
-        <div className="flex justify-center mt-10"></div>
+      </motion.section>
+      <div className="fixed-bottom-container mb-10">
+        <WhiteRabbit textSequence={textSequence} rabbitSrc={Rabbit} />
       </div>
-    </section>
+    </>
   );
 };
 
-export default Testimonials;
+export default Portfolio;
