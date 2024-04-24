@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const WhiteRabbit = ({ textSequence, rabbitSrc }) => {
   return (
-    <Card className="bg-dark text-white card-main mb-1" style={{ minHeight: "250px" }}>
+    <Card className="bg-dark text-white card-main mb-1" style={{ maxHeight: "120px" }}>
       <Card.Body>
         <Row>
           <Col md={8} className="d-md-block">

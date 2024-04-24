@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Container } from "react-bootstrap";
 import MainNav from "@/pages/components/MainNav";
-import About from "../about";
 import Footer from "./Footer";
 import MatrixRainingCode from "./MatrixRain";
 
@@ -34,7 +33,6 @@ export default function Layout(props) {
       <br />
       <MatrixRainingCode />
       <MainNav />
-
       <Container className="custom-container" style={{ fontSize: `${fontSize}px` }}>
         {props.children}
       </Container>

@@ -1,51 +1,65 @@
-import { useEffect, useState } from "react";
-import { Card } from "react-bootstrap";
+import { useEffect } from "react";
+import { motion, useAnimation } from "framer-motion";
+import Rabbit from "../img/white-rabbit.gif";
+import WhiteRabbit from "./components/WhiteRabbit";
 import { TypeAnimation } from "react-type-animation";
-import WhiteRabbit from "@/pages/components/WhiteRabbit";
-import Rabbit from "@/img/white-rabbit.gif";
 
-export default function Home() {
-  const [animationInitiated, setAnimationInitiated] = useState(false);
-  const [textIndex, setTextIndex] = useState(0);
-
-  const textParts = [{ text: "# whoami", tag: "h2", style: { fontSize: "2em" } }, { text: "I'm a passionate and dedicated software developer." }, { text: "My journey into the world of programming began with a curiosity to understand how software works and a desire to create innovative solutions." }, { text: "As a student, I've had the opportunity to explore various technologies, frameworks, and programming languages, and I'm continuously expanding my skill set." }, { text: "I am particularly interested in full-stack web development and software development, and I enjoy working on projects that involve both front-end and back-end technologies." }, { text: "My goal is to become a proficient and well-rounded software developer, and I'm excited about the challenges and learning opportunities that come with this journey.", tag: "p" }];
+export default function AboutMe() {
+  const controls = useAnimation();
   const textSequence = ["Neo: Hello?", 2000, "Morpheus: Hello, Neo. Do you know who this is?", 2000, "Neo: Morpheus?", 2000, "Morpheus: Yes. I've been looking for you, Neo.", 2000, "Morpheus: I don't know if you're ready to see what I want to show you, but unfortunately, you and I have run out of time.", 2000, "Morpheus: They're coming for you, Neo, and I don't know what they're going to do.", 2000, "Neo: Who's coming for me?", 2000, "Morpheus: Stand up and see for yourself.", 2000, "Neo: What, right now?", 2000, "Morpheus: Yes, now.", 2000, "The Matrix has you...", 2000, "Follow the white rabbit.", 2000];
-  useEffect(() => {
-    if (!animationInitiated) {
-      // Start animation for the next text part after a delay
-      const timeout = setTimeout(() => {
-        setTextIndex((prevIndex) => prevIndex + 1);
-      }, 2300); // Adjust the delay as needed
 
-      return () => clearTimeout(timeout);
-    }
-  }, [animationInitiated, textIndex]);
+  useEffect(() => {
+    const handleScroll = () => {
+      const aboutMeSection = document.getElementById("aboutMe");
+      const { top } = aboutMeSection.getBoundingClientRect();
+      const isVisible = top < window.innerHeight - 100;
+
+      if (isVisible) {
+        controls.start({ opacity: 1, scale: 1 });
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [controls]);
 
   return (
     <>
-      {" "}
-      <Card className="bg-dark text-white card-main p-4 mb-3">
-        <div>
-          {textParts.slice(0, textIndex + 1).map((part, index) => (
+      <motion.section initial={{ opacity: 0, filter: "blur(20px)" }} animate={{ opacity: 1, filter: "blur(0px)" }} transition={{ duration: 1, delay: 0.5 }} className="bg-transparent bg-opacity-20 backdrop-filter backdrop-blur-lg " id="home">
+        <div className="container mx-auto flex flex-col pb-10 md:pb-40 items-center justify-center h-screen px-6">
+          <motion.h1 initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.5 }} className="text-4xl md:text-4xl lg:text-4xl font-bold text-white mb-6  text-center">
+            #whoami
+          </motion.h1>
+          <motion.p initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.5 }} className="text-lg md:text-xl lg:text-3xl text-white mb-10 text-center">
             <TypeAnimation
-              key={index}
-              sequence={[part.text]}
-              speed={{ type: "keyStrokeDelayInMs", value: 20 }}
+              sequence={[
+                // Initial part changing from "Hi, I'm Neo." to "Hi, I'm Yunus."
+                "Hi, my name is Neo.",
+                300, // Wait 2 seconds before changing
+                "Hi, my name is Yunus.", // New text
+                1000, // Wait 2 seconds before starting the next part
+              ]}
+              wrapper="span"
+              speed={50}
               cursor={false}
-              wrapper={part.tag || "div"}
-              style={part.style || { fontSize: "1em" }}
-              onComplete={() => {
-                if (index === textParts.length + 1) {
-                  // Set initiated to true when the last part completes
-                  setAnimationInitiated(true);
-                }
-              }}
-              className="green-text"
+              style={{ fontSize: "1em", display: "inline-block" }}
+              // Repeat once
             />
-          ))}
+          </motion.p>
+          <motion.p>
+            <TypeAnimation sequence={[2500, "I'm a computer programming and analysis at Seneca College.", 1400, "I'm a full-stack developer.", 1000, "I'm a software architecture enthusiast.", 1000, "I'm a photographer.", 1000, "I'm a gamer.", 1000, "I'm a chef.", 1000, "I'm a Matrix fan.", 1000, "and I'm a machine."]} wrapper="span" speed={90} style={{ fontSize: "2em", display: "inline-block" }} className="green-text mb-10 text-center" />
+          </motion.p>
+          <motion.p initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 13 }} className="text-lg md:text-xl lg:text-1xl text-white mb-10 text-center">
+            Never send a human to do a machine&apos;s job.
+          </motion.p>
         </div>
-      </Card>
-      <WhiteRabbit textSequence={textSequence} rabbitSrc={Rabbit} />
+      </motion.section>
+      <div className="fixed-bottom-container mb-10">
+        <WhiteRabbit textSequence={textSequence} rabbitSrc={Rabbit} />
+      </div>
     </>
   );
 }
