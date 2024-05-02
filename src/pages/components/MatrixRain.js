@@ -26,7 +26,7 @@ const MatrixRainingCode = () => {
       ctx.fillStyle = "rgba(0, 0, 0, 0.04)";
       ctx.fillRect(0, 0, width, height);
 
-      ctx.fillStyle = "#0f0"; // Green color for characters
+      ctx.fillStyle = "#e6d789"; //  color for characters
 
       // Draw the characters
       ctx.font = "15px monospace";

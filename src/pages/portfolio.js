@@ -1,23 +1,76 @@
-import React, { useEffect } from "react";
-import { motion, useAnimation } from "framer-motion";
-import Rabbit from "../img/white-rabbit.gif";
-import WhiteRabbit from "./components/WhiteRabbit";
+import React from "react";
+import { motion } from "framer-motion";
+import ProjectCard from "./components/ProjectCard";
 
 const Portfolio = () => {
-  const textSequence = ["Neo: Hello?", 2000, "Morpheus: Hello, Neo. Do you know who this is?", 2000, "Neo: Morpheus?", 2000, "Morpheus: Yes. I've been looking for you, Neo.", 2000, "Morpheus: I don't know if you're ready to see what I want to show you, but unfortunately, you and I have run out of time.", 2000, "Morpheus: They're coming for you, Neo, and I don't know what they're going to do.", 2000, "Neo: Who's coming for me?", 2000, "Morpheus: Stand up and see for yourself.", 2000, "Neo: What, right now?", 2000, "Morpheus: Yes, now.", 2000, "The Matrix has you...", 2000, "Follow the white rabbit.", 2000];
+  const projects = [
+    {
+      name: "My Portfolio Website",
+      description: "React.JS, Next.JS, TailwindCSS, Framer-Motion",
+      githubRepo: "https://github.com/yemregumus/pfSite",
+      imageSrc: "",
+      deploymentLink: "",
+    },
+    {
+      name: "Python Board Game",
+      description: "DSA Project, this is a two player board game. Implemented with Python.",
+      githubRepo: "https://github.com/yemregumus/pythonBoardGame",
+      imageSrc: "",
+      deploymentLink: "",
+    },
+    {
+      name: "Movie Library Website",
+      description: "React and Next.js, interface for viewing movie details.",
+      githubRepo: "https://github.com/yemregumus/WEB422-Assignment3",
+      imageSrc: "",
+      deploymentLink: "",
+    },
+    {
+      name: "Museum of Art New York Website",
+      description: "React, Next.js, and React Bootstrap. responsive user interface for browsing art collections.",
+      githubRepo: "https://github.com/yemregumus/WEB422-Assignment6",
+      imageSrc: "",
+      deploymentLink: "",
+    },
+    {
+      name: "Museum of Art New York Website Backend",
+      description: "This backend server, built with Express.js, facilitates user authentication and data management for a web application.",
+      githubRepo: "https://github.com/yemregumus/a6Backend",
+      imageSrc: "",
+      deploymentLink: "",
+    },
+    {
+      name: "Backend for My Portfolio Website's Contact Page",
+      description: "This backend server, built with Node.js and Express.js, facilitates communication between clients and a designated email recipient. ",
+      githubRepo: "https://github.com/yemregumus/pfContactAPI",
+      imageSrc: "",
+      deploymentLink: "",
+    },
+    {
+      name: "Fragments MicroService UI (Frontend)",
+      description: "This UI provides an intuitive interface for creating, editing, and deleting fragments.",
+      githubRepo: "https://github.com/yemregumus/fragments-ui",
+      imageSrc: "",
+      deploymentLink: "",
+    },
+    {
+      name: "Fragments MicroService UI (Backend)",
+      description: "The fragments microservice facilitates the management of text, image, and JSON data fragments within a distributed system.",
+      githubRepo: "https://github.com/yemregumus/fragments",
+      imageSrc: "",
+      deploymentLink: "",
+    },
+  ];
+
   return (
-    <>
-      <motion.section initial={{ opacity: 0, filter: "blur(20px)" }} animate={{ opacity: 1, filter: "blur(0px)" }} transition={{ duration: 1, delay: 0.5 }} className="bg-transparent bg-opacity-20 backdrop-filter backdrop-blur-lg " id="home">
-        <div className="container mx-auto flex flex-col pb-10 md:pb-40 items-center justify-center h-screen px-6">
-          <motion.h1 initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.5 }} className="text-4xl md:text-4xl lg:text-4xl font-bold text-white mb-6  text-center">
-            Projects Page Coming Soon
-          </motion.h1>
-        </div>
-      </motion.section>
-      <div className="fixed-bottom-container mb-10">
-        <WhiteRabbit textSequence={textSequence} rabbitSrc={Rabbit} />
-      </div>
-    </>
+    <motion.section initial={{ opacity: 0, filter: "blur(20px)" }} animate={{ opacity: 1, filter: "blur(0px)" }} transition={{ duration: 1, delay: 0.5 }} className="bg-transparent bg-opacity-20 backdrop-filter backdrop-blur-lg h-screen" id="contact">
+      <motion.h2 className="text-3xl md:text-5xl font-bold text-white text-center mt-20 mb-10">Projects</motion.h2>
+      <motion.div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {projects.map((project, index) => (
+          <ProjectCard key={index} name={project.name} description={project.description} githubRepo={project.githubRepo} deploymentLink={project.deploymentLink} imagePath={project.imagePath} />
+        ))}
+      </motion.div>
+    </motion.section>
   );
 };
 

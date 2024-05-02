@@ -29,15 +29,10 @@ export default function Layout(props) {
 
   return (
     <>
-      <br />
-      <br />
       <MatrixRainingCode />
       <MainNav />
-      <Container className="custom-container" style={{ fontSize: `${fontSize}px` }}>
-        {props.children}
-      </Container>
 
-      <br />
+      <Container>{props.children}</Container>
       <Footer />
     </>
   );
