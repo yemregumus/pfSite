@@ -5,8 +5,8 @@ import PortfolioSS from "../img/portfolio.jpg";
 import PythonBoardGameSS from "../img/pygame.jpg";
 import MovieLibrarySS from "../img/movielib.jpg";
 import MuseumOfArtSS from "../img/mmoany.jpg";
-import MuseumOfArtBackendSS from "../img/mmoanybackend.jpg";
-import PfBackendSS from "../img/pfbackend.jpg";
+import MuseumOfArtBackendSS from "../img/mmoanyBackend.jpg";
+import PfBackendSS from "../img/pfBackend.jpg";
 import FragmentsUISs from "../img/fragmentsUI.jpg";
 import FragmentsBackendSS from "../img/fragmentsMS.jpg";
 
