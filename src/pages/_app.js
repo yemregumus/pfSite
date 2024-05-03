@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Layout from "./components/Layout";
 
 import Head from "next/head";
-import { AlertProvider } from "./components/AlertProvider";
+import AlertProvider from "./components/AlertProvider";
 
 export default function App({ Component, pageProps }) {
   return (

@@ -5,7 +5,7 @@ const AlertContext = createContext();
 
 export const useAlert = () => useContext(AlertContext);
 
-export const AlertProvider = ({ children }) => {
+const AlertProvider = ({ children }) => {
   const [alert, setAlert] = useState(null);
 
   const showAlert = (type, text) => {
@@ -22,3 +22,5 @@ export const AlertProvider = ({ children }) => {
     </AlertContext.Provider>
   );
 };
+
+export default AlertProvider;

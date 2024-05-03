@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import ProjectCard from "./components/ProjectCard";
+import PortfolioSS from "../img/portfolio.jpg";
 
 const Portfolio = () => {
   const projects = [
@@ -8,7 +9,7 @@ const Portfolio = () => {
       name: "My Portfolio Website",
       description: "React.JS, Next.JS, TailwindCSS, Framer-Motion",
       githubRepo: "https://github.com/yemregumus/pfSite",
-      imageSrc: "",
+      imageSrc: PortfolioSS,
       deploymentLink: "",
     },
     {
@@ -63,13 +64,28 @@ const Portfolio = () => {
   ];
 
   return (
-    <motion.section initial={{ opacity: 0, filter: "blur(20px)" }} animate={{ opacity: 1, filter: "blur(0px)" }} transition={{ duration: 1, delay: 0.5 }} className="bg-transparent bg-opacity-20 backdrop-filter backdrop-blur-lg h-screen" id="contact">
-      <motion.h2 className="text-3xl md:text-5xl font-bold text-white text-center mt-20 mb-10">Projects</motion.h2>
-      <motion.div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {projects.map((project, index) => (
-          <ProjectCard key={index} name={project.name} description={project.description} githubRepo={project.githubRepo} deploymentLink={project.deploymentLink} imagePath={project.imagePath} />
-        ))}
-      </motion.div>
+    <motion.section initial={{ opacity: 0, filter: "blur(20px)" }} animate={{ opacity: 1, filter: "blur(0px)" }} transition={{ duration: 1, delay: 0.5 }} className="bg-transparent bg-opacity-20 backdrop-filter backdrop-blur-lg mt-4" style={{ minHeight: "70vh" }} id="contact">
+      <div className="container">
+        <div className="row">
+          <div className="col text-center">
+            <motion.h2 className="text-3xl md:text-5xl font-bold text-white">Projects</motion.h2>
+          </div>
+        </div>
+
+        <div className="row mt-4">
+          {projects.map((project, index) => (
+            <div key={index} className="col-md-4 mb-4">
+              <ProjectCard
+                name={project.name}
+                description={project.description}
+                githubRepo={project.githubRepo}
+                deploymentLink={project.deploymentLink}
+                imageSrc={project.imageSrc} // Use imageSrc instead of imagePath
+              />
+            </div>
+          ))}
+        </div>
+      </div>
     </motion.section>
   );
 };

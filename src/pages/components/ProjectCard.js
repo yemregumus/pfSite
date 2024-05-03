@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const ProjectCard = ({ name, description, githubRepo, deploymentLink, imagePath }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
     <motion.div className="project-card" whileHover={{ scale: 1.05, height: "auto" }} initial={{ scale: 1, height: "18rem" }} onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
-      <img src={imagePath} alt={name} />
+      <Image src={imagePath} alt={name} width={300} height={200} />
       <div>
         <h3 className="text-xl font-bold mb-4">{name}</h3>
         <p className="text-gray-600 mb-6" style={{ display: isHovered ? "block" : "none" }}>
