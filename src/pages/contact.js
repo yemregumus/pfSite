@@ -86,10 +86,10 @@ export default function Contact() {
                 <hr style={{ width: "50%", color: "black", marginTop: "10px", marginBottom: "30px", marginLeft: "auto", marginRight: "auto" }} />
 
                 <div className="text-center text-white font-bold text-1xl md:text-1xl lg:text-2xl">
-                  <Link href="https://github.com/yemregumus" passHref>
+                  <Link href="https://github.com/yemregumus" passHref target="_blank" rel="noopener noreferrer">
                     <GitHubIcon className="github-icon" fontSize="large" style={{ marginRight: "10px", color: "#black", cursor: "pointer" }} />
                   </Link>
-                  <Link href="https://www.linkedin.com/in/jonasgumusyyz/" passHref>
+                  <Link href="https://www.linkedin.com/in/jonasgumusyyz/" passHref target="_blank" rel="noopener noreferrer">
                     <LinkedInIcon className="linkedin-icon" fontSize="large" style={{ marginRight: "10px", color: "#white", cursor: "pointer" }} />
                   </Link>
                 </div>
