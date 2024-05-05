@@ -32,6 +32,7 @@ export default function AboutMe() {
           <div className="buttons-container">
             <CustomButton href="/portfolio" text="My Projects" />
             <CustomButton href="/contact" text="Contact Me" />
+            <CustomButton href="https://buymeacoffee.com/yunusgumus" text="Buy Me a Coffee" />
           </div>
         </div>
       </motion.section>

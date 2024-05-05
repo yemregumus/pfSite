@@ -78,7 +78,6 @@ const Portfolio = () => {
                 name={project.name}
                 description={project.description}
                 githubRepo={project.githubRepo}
-                deploymentLink={project.deploymentLink}
                 imagePath={project.imagePath} // Use imageSrc instead of imagePath
               />
             </div>

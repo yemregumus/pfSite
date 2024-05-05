@@ -21,9 +21,9 @@ const CustomButton = ({ href, text, type = "button", onClick }) => {
   );
 
   return href ? (
-    <Link href={href} passHref={true}>
+    <a href={href} target="_blank" rel="noopener noreferrer">
       {buttonComponent}
-    </Link>
+    </a>
   ) : (
     buttonComponent
   );

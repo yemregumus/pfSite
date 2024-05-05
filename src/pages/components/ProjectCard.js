@@ -16,7 +16,7 @@ const ProjectCard = ({ name, description, githubRepo, deploymentLink, imagePath 
           </p>
         </div>
         <div className="flex space-x-4">
-          <a href={githubRepo} className="text-green-500 font-semibold hover:text-green-600">
+          <a href={githubRepo} className="text-green-500 font-semibold hover:text-green-600" target="_blank" rel="noopener noreferrer">
             Link To GitHub Repo
           </a>
         </div>
