@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
-const CustomButton = ({ href, text, type = "button", onClick }) => {
+const CustomButton = ({ href, text, type = "button", onClick, openInNewTab = false }) => {
   const buttonProps = {
     whileHover: { scale: 1.1, backgroundColor: "black", color: "white" },
     whileTap: { scale: 0.9 },
@@ -21,9 +21,15 @@ const CustomButton = ({ href, text, type = "button", onClick }) => {
   );
 
   return href ? (
-    <a href={href} target="_blank" rel="noopener noreferrer">
-      {buttonComponent}
-    </a>
+    openInNewTab ? (
+      <a href={href} target="_blank" rel="noopener noreferrer">
+        {buttonComponent}
+      </a>
+    ) : (
+      <Link href={href} passHref>
+        {buttonComponent}
+      </Link>
+    )
   ) : (
     buttonComponent
   );
