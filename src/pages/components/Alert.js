@@ -13,3 +13,5 @@ const Alert = ({ type, text }) => {
     </div>
   );
 };
+
+export default Alert;
