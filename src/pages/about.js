@@ -26,7 +26,7 @@ export default function AboutMe() {
             />
           </div>
           <div className="about-me-box">
-            <p className="aboutMeP ">In my private life I am passionate individual about technology, working out, cooking, and self-improvement. In professional life I&apos;m a dedicated developer who thrives on learning and consistently improving. My strength lies in swiftly grasping new technologies and crafting efficient, organized, and easily comprehensible code to ensure top-notch products. Moreover, I excel in stakeholder communication, adeptly translating their needs into elegant and accessible solutions. My ambition extends to mastering Full Stack Development, complemented by expertise in UI/UX Design, Cloud Computing, and DevOps.</p>
+            <p className="aboutMeP ">In my private life I am a passionate individual about technology, working out, cooking, and self-improvement. In professional life I&apos;m a dedicated developer who thrives on learning and consistently improving. My strength lies in swiftly grasping new technologies and crafting efficient, organized, and easily comprehensible code to ensure top-notch products. Moreover, I excel in stakeholder communication, adeptly translating their needs into elegant and accessible solutions. My ambition extends to mastering Full Stack Development, complemented by expertise in UI/UX Design, Cloud Computing, and DevOps.</p>
           </div>
           <br />
           <div className="buttons-container">
