@@ -1,3 +1,12 @@
+Link to deployment : https://yunusgumus.netlify.app/
+
+ScreenShot
+
+![image](https://github.com/yemregumus/pfSite/assets/97633311/a2998708-089b-4d61-873b-ad0adb2390d1)
+
+
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
