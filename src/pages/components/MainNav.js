@@ -22,7 +22,7 @@ export default function MainNav() {
         <Container>
           <Navbar.Brand className="ml-auto">
             <Link href="/">
-              <Image alt="" src={logo} width="200" height="50" className="d-inline-block align-top" />
+              <Image alt="nameLogo" src={logo} width="200" height="50" className="d-inline-block align-top" />
             </Link>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" onClick={handleToggle} />

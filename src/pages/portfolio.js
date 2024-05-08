@@ -78,7 +78,7 @@ const Portfolio = () => {
                 name={project.name}
                 description={project.description}
                 githubRepo={project.githubRepo}
-                imagePath={project.imagePath} // Use imageSrc instead of imagePath
+                imagePath={project.imagePath} // Use imagePath instead
               />
             </div>
           ))}

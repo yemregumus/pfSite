@@ -1,5 +1,10 @@
 import React, { useEffect, useRef } from "react";
 
+/**
+ * Matrix-style raining code effect using HTML5 canvas.
+ *
+ * @returns {JSX.Element} React element representing the MatrixRainingCode component.
+ */
 const MatrixRainingCode = () => {
   const canvasRef = useRef(null);
 

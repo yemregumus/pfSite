@@ -1,6 +1,11 @@
 import React from "react";
 import { Container, Navbar } from "react-bootstrap";
 
+/**
+ * Footer component displaying copyright information.
+ *
+ * @returns {JSX.Element} React element representing the footer component.
+ */
 export default function Footer() {
   return (
     <Navbar expand="lg" className="fixed-bottom bg-dark navbar-dark custom-footer">

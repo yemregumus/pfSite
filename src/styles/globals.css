@@ -52,6 +52,19 @@ body {
   margin-top: 20px; /* Adjust as needed */
 }
 
+/* Apply smaller button size on screens smaller than 768px */
+@media (max-width: 768px) {
+  .buttons-container {
+    gap: 3px; /* Reduce the space between buttons */
+    margin-bottom: 40px; /* Adjust as needed */
+  }
+
+  .menu-button {
+    font-size: 0.8rem; /* Reduce button font size */
+    padding: 8px 12px; /* Reduce button padding */
+  }
+}
+
 .custom-navbar {
   max-width: 1296px;
   margin: 0 auto;
