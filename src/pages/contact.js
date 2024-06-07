@@ -34,7 +34,7 @@ export default function Contact() {
     }
 
     try {
-      const formspreeEndpoint = "https://friendly-red-shirt.cyclic.app/send-email";
+      const formspreeEndpoint = "https://pfcontactapi.onrender.com/send-email";
       const formData = new FormData();
       formData.append("name", name);
       formData.append("email", email);
