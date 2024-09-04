@@ -24,7 +24,7 @@ export default function Home() {
         </motion.div>
       </motion.section>
 
-      <div className="fixed-bottom-container mb-10">
+      <div className="fixed-bottom-container mb-10 hidden md:block">
         <WhiteRabbit textSequence={textSequence} rabbitSrc={Rabbit} />
       </div>
     </>
