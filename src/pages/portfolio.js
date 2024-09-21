@@ -10,7 +10,7 @@ import PfBackendSS from "../img/pfBackend.jpg";
 import FragmentsUISs from "../img/fragmentsUI.jpg";
 import FragmentsBackendSS from "../img/fragmentsMS.jpg";
 import IntellicyclesSS from "../img/intellicycles.jpg";
-import WorldCountriesAppSS from "../img/worldCountries.jpg";
+import WorldCountriesAppSS from "../img/worldcountries.jpg";
 import IntelliSuiteSS from "../img/intellisuite.jpg";
 import InsuranceAppSS from "../img/insuranceApp.jpg";
 
@@ -19,13 +19,13 @@ const Portfolio = () => {
     {
       name: "Insurance Claim Management Application",
       description: "The application is built using ASP.NET Core Razor Pages for a robust web framework and C# for backend logic. Entity Framework Core simplifies database interactions with MySQL for reliable data storage, Git and GitHub for version control, ensuring effective change tracking and collaboration.",
-      githubRepo: "https://github.com/yemregumus/MobileApp-Dev/tree/main/WorldCountriesApp/world-countries-app",
+      githubRepo: "https://github.com/yemregumus/insuranceClaimManagementApp",
       imagePath: InsuranceAppSS,
     },
     {
       name: "IntelliSuite AI SaaS",
       description: "The project leverages Next.js and React to build a modern web application that is efficient and user-friendly. With the integration of libraries like Shadcn, Axios, React Hook Form, and Radix UI, the application is designed for high performance and accessibility. The use of Tailwind CSS allows for rapid UI development with a focus on consistency, while TypeScript enhances code safety and maintainability.",
-      githubRepo: "https://github.com/yemregumus/MobileApp-Dev/tree/main/WorldCountriesApp/world-countries-app",
+      githubRepo: "https://github.com/yemregumus/intellisuite",
       imagePath: IntelliSuiteSS,
     },
     {
