@@ -26,6 +26,7 @@
     "react-scroll": "^1.9.0",
     "react-scrollspy": "^3.4.3",
     "react-type-animation": "^3.2.0",
+    "sharp": "^0.33.5",
     "styled-components": "^6.1.6",
     "swr": "^2.2.4",
     "vara": "^1.4.1"
