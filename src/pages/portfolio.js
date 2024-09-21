@@ -9,9 +9,38 @@ import MuseumOfArtBackendSS from "../img/mmoanyBackend.jpg";
 import PfBackendSS from "../img/pfBackend.jpg";
 import FragmentsUISs from "../img/fragmentsUI.jpg";
 import FragmentsBackendSS from "../img/fragmentsMS.jpg";
+import IntellicyclesSS from "../img/intellicycles.jpg";
+import WorldCountriesAppSS from "../img/worldCountries.jpg";
+import IntelliSuiteSS from "../img/intellisuite.jpg";
+import InsuranceAppSS from "../img/insuranceApp.jpg";
 
 const Portfolio = () => {
   const projects = [
+    {
+      name: "Insurance Claim Management Application",
+      description: "The application is built using ASP.NET Core Razor Pages for a robust web framework and C# for backend logic. Entity Framework Core simplifies database interactions with MySQL for reliable data storage, Git and GitHub for version control, ensuring effective change tracking and collaboration.",
+      githubRepo: "https://github.com/yemregumus/MobileApp-Dev/tree/main/WorldCountriesApp/world-countries-app",
+      imagePath: InsuranceAppSS,
+    },
+    {
+      name: "IntelliSuite AI SaaS",
+      description: "The project leverages Next.js and React to build a modern web application that is efficient and user-friendly. With the integration of libraries like Shadcn, Axios, React Hook Form, and Radix UI, the application is designed for high performance and accessibility. The use of Tailwind CSS allows for rapid UI development with a focus on consistency, while TypeScript enhances code safety and maintainability.",
+      githubRepo: "https://github.com/yemregumus/MobileApp-Dev/tree/main/WorldCountriesApp/world-countries-app",
+      imagePath: IntelliSuiteSS,
+    },
+    {
+      name: "World Countries App",
+      description: "The project leverages Angular and Ionic for building a cross-platform application that can run on web and mobile devices, utilizing Capacitor for native capabilities. It includes comprehensive scripts for building, serving, testing, and linting, ensuring a smooth development workflow.",
+      githubRepo: "https://github.com/yemregumus/MobileApp-Dev/tree/main/WorldCountriesApp/world-countries-app",
+      imagePath: WorldCountriesAppSS,
+    },
+    {
+      name: "IntelliCycles Calendar App",
+      description: "Built with Node.js, Express, PostgreSQL, Bcrypt, JWT, Passport.js, Nodemon, Jest, Supertest in the Backend and for the Frontend Stack: React, Vite, Axios, Emotion, FullCalendar, Bootstrap, Moment.js, React Router DOM, Tailwind CSS, ESLint.",
+      githubRepo: "https://github.com/yemregumus/IntelliCycles",
+      imagePath: IntellicyclesSS,
+    },
+
     {
       name: "My Portfolio Website",
       description: "Built with React.JS, Next.JS, TailwindCSS, Framer-Motion",
