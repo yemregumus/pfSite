@@ -3,7 +3,6 @@ import { Container, Nav, Navbar } from "react-bootstrap";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import logo from "/src/img/logo4.png";
 
 export default function MainNav() {
   const [expanded, setExpanded] = useState(false);
@@ -20,11 +19,7 @@ export default function MainNav() {
     <>
       <Navbar expand="lg" className="bg-dark navbar-dark custom-navbar" expanded={expanded}>
         <Container>
-          <Navbar.Brand className="ml-auto">
-            <Link href="/">
-              <Image alt="nameLogo" src={logo} width="200" height="50" className="d-inline-block align-top" />
-            </Link>
-          </Navbar.Brand>
+          <Navbar.Brand className="ml-auto"></Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" onClick={handleToggle} />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="ms-auto">
