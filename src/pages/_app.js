@@ -11,7 +11,7 @@ export default function App({ Component, pageProps }) {
       <Layout>
         <AlertProvider>
           <Head>
-            <title>Yunus Emre Gumus</title>
+            <title>Jonas Gumus</title>
             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
           </Head>
           <Component {...pageProps} />

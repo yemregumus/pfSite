@@ -14,7 +14,7 @@ export default function Home() {
             Software
           </motion.h2>
           <motion.p initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.5 }} className="nameText text-6xl md:text-8xl lg:text-9xl font-bold text-white mb-6 text-center ">
-            Yunus Emre Gumus
+            Jonas Gumus
           </motion.p>
 
           <motion.h2 initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.5 }} className="developerText text-4xl md:text-6xl lg:text-7xl  font-bold text-white mb-10 text-center ">
